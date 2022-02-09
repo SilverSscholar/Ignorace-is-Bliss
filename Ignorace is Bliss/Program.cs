@@ -37,7 +37,7 @@ namespace Ignorace_is_Bliss
             if(currentPlayer.name=="")
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"'Hey sweetie did you sleep well?'");
+                Console.WriteLine($"Hey sweetie did you sleep well?");
             }
             else
             Console.ForegroundColor = ConsoleColor.Cyan;

@@ -9,7 +9,7 @@ namespace Ignorace_is_Bliss
     class Player
     {
         public string name;
-        public int healing =5;
+        public int food =5;
         public int health = 10;
         public int damage =1;
         
