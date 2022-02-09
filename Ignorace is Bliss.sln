@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ignorace is Bliss", "Ignorace is Bliss\Ignorace is Bliss.csproj", "{1DB27C44-D4AC-4569-B749-174D3EC064AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DB27C44-D4AC-4569-B749-174D3EC064AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB27C44-D4AC-4569-B749-174D3EC064AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB27C44-D4AC-4569-B749-174D3EC064AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB27C44-D4AC-4569-B749-174D3EC064AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E72835F-9435-4764-A256-EE04350562AE}
+	EndGlobalSection
+EndGlobal
