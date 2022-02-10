@@ -25,11 +25,12 @@ namespace Ignorace_is_Bliss
 
         static void Start() //happens seperate from the main string arguments; game start
         {
+          
             Console.WriteLine($"Ignorance is Bliss");
             Console.WriteLine("Please insert a name:");
             Console.ForegroundColor = ConsoleColor.White;
             currentPlayer.name = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Clear();
             Console.WriteLine($"You wake to the sound of rain pitter pattering on the side of the car's window." );
             Console.WriteLine($"Interstate lights flashing along the back of the car along your face, as your strapped in tightly in your carseat.");
