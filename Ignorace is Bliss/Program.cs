@@ -9,7 +9,7 @@ namespace Ignorace_is_Bliss
     class Program
     {
         public static Player currentPlayer = new Player();
-
+        
        
         static void Main(string[] args)
      
@@ -18,6 +18,7 @@ namespace Ignorace_is_Bliss
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Blue;
             Start();
+            Interactions.FirstInteraction();
         }
 
 

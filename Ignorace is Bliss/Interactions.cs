@@ -8,7 +8,7 @@ namespace Ignorace_is_Bliss
 {
     class Interactions
     {
-
+        static Random rand = new Random();
         //Interaction Generic
 
 
@@ -18,17 +18,17 @@ namespace Ignorace_is_Bliss
             Console.WriteLine("You stare sleepily back at your mother ...");
             Console.WriteLine("She looks at you expectantly...");
             Console.ReadKey();
-
+            Combat(false, "Mom", 1, 2);
         }
 
 
         //Options
-        public static void Options(bool random, string name, int power, int health)
+        public static void Combat(bool random, string name, int power, int health)
         {
             string n = "";
             int p = 0;
             int h = 0;
-
+            
             if (random)
             {
 
@@ -41,6 +41,9 @@ namespace Ignorace_is_Bliss
             }
             while(h > 0)
             {
+                Console.Clear();
+                Console.WriteLine(n);
+                Console.WriteLine(p+ "/" + h);
                 Console.WriteLine("======================");
                 Console.WriteLine("| (I)nvestigate  (C)ry |");
                 Console.WriteLine("|  (R)eason  (B)lock   |");
@@ -85,18 +88,70 @@ namespace Ignorace_is_Bliss
                 }
                 else if (input.ToLower() == "b" || input.ToLower() == "block")
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"You hold your hands up in front of you.");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"Your mom gives you a very confused look, without saying another word.");
                     //block use on an enemy that just won't let up
                 }
                 else if (input.ToLower() == "e" || input.ToLower() == "eat")
                 {
+                    if (Program.currentPlayer.food == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("You scrounge desperately in your bag for something to snack on. It seems though that your mother has neglected to remember your snacks.");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"You reach into you backpack and find your favorite snack in the bag. You take a bite of the mysterious treat.");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"'Oh I'm glad you found your snacks honey.'");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        int foodV = 5;
+                        Console.WriteLine($"You ate one mysterious snack, you recieve " +foodV+" health!");
+                        Program.currentPlayer.health += foodV;
+                    }
+                    Console.ReadKey();
                     //eat to regain health, it'll be fine monsters are polite enough to wait for the next turn
                 }
                 else if (input.ToLower() == "f" || input.ToLower() == "flee")
                 {
                     //flee fleeing is sometimes the best option when your a scared 5 yr old
                     //fleeing has a % chance of failing, or has a chance encounter of the monster pursuing (if i can figure that out)
+                    //for sake of brevity it'll be a 50/50 chance of success.
+
+                    if (rand.Next(0, 2) == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"As you reach for the car's door handle you find that it doesn't pry open.");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("$Your mom looks at you bewildered.");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($"Hey! What on Earth do you think your doing?!?! Jesus, this is  why we have child locks.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        int damage = p - Program.currentPlayer.health;
+                        if (damage < 0)
+                            damage = 0;
+                        Console.WriteLine("You lose " + damage + "health due to your mother's dissapointed glare.");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"You unbuckle your seatbelt, and reach with your tiny arms over to the door handle.");
+                        Console.WriteLine($"Once your hands grasp onto the handle you open the door the violent winds whipping at your hair.");
+                        Console.WriteLine($"The car suddenly lurches and you find your tiny head hitting the pavement.");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Is this truly how you wish to go? Get up, and try once again you whelp!");
+                        //Die instantly retry from main screen
+                        Console.ReadKey();
+                    }
                 }
+                Console.ReadKey();
             }
+
         }
     }
 }
