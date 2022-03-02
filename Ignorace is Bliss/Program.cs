@@ -68,6 +68,12 @@ namespace Ignorace_is_Bliss
             Console.WriteLine($"Your mother reached for your hand, and you took it in stride.\nIt was too late to argue against how big you were, and you were too tired to really say anything.");
             Console.ReadKey();
             Console.Clear();
+
+            Console.WriteLine($"As you walked in your footie pajamas into the large KREUGER you noticed the central window lights flickering on, and off.\n Being the asute" +
+                $"child that you were you very worriedly pointed it out.\nYour mother gave you a very gentle smile, and assured you that it was nighttime and the building was tired.");
+            Console.WriteLine("That seemed to satisfy you for the time being.");
+            Console.ReadKey();
+            Console.Clear();
         }
             
     }
