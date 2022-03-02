@@ -158,13 +158,22 @@ namespace Ignorace_is_Bliss
                         int damageV = 100;
 
 
-                        Console.WriteLine($"In your last moments of clarity you see the old Corolla lurch to a stop on the road. Your vision starts to fade.\nBefore you worried mother could get to you you lost " + damageV + " health!\nYou died.");
+                        Console.WriteLine($"In your last moments of clarity you see the old Corolla lurch to a stop on the road. Your vision starts to fade.\nBefore you worried mother could get to you you lost " + damageV + " health!");
                         Program.currentPlayer.health -= damageV;
                         Console.ForegroundColor = ConsoleColor.White;
 
                         //Die instantly retry from main screen
                         Console.ReadKey();
                     }
+                    Console.ReadKey();
+                }
+                if(Program.currentPlayer.health<=0)
+                {
+                    //death code
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"The light leaves your eyes. As "+n+ "stands above you grief striken on her face.\n You have died in the most foolish of ways.");
+                    Console.ReadKey();
+                    System.Environment.Exit(0);
                 }
                 Console.ReadKey();
             }
