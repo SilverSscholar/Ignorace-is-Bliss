@@ -14,11 +14,13 @@ namespace Ignorace_is_Bliss
 
         //Interactions
         public static void FirstInteraction() //function won't return variable if void
-        {
-            Console.WriteLine("You stare sleepily back at your mother ...");
-            Console.WriteLine("She looks at you expectantly...");
+        {            
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("\nYou stare sleepily back at your mother ...");
+            Console.WriteLine("\nShe looks at you expectantly...");
             Console.ReadKey();
-            Combat(false, "Mom", 1, 100);
+            Combat(false, "Mom", 10, 100);
         }
 
 
@@ -45,11 +47,16 @@ namespace Ignorace_is_Bliss
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(n);
                 Console.WriteLine(p+ "/" + h);
-                Console.WriteLine("================================");
-                Console.WriteLine("| (I)nvestigate  (C)ry (S)kip  |");
-                Console.WriteLine("|  (R)eason  (B)lock           |");
-                Console.WriteLine("| (E)at        (F)lee          |");
-                Console.WriteLine("================================");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("======================================");
+                Console.WriteLine("| (I)nvestigate  (C)ry     (A)dvance |");
+                Console.WriteLine("| (R)eason       (B)lock             |");
+                Console.WriteLine("| (E)at          (F)lee              |");
+                Console.WriteLine("======================================");
+                
+
+                Console.WriteLine($"Please select an option: \n(I) to Investigate, (R) to Reason, (E) to eat,\n(C) to Cry, (A) to Advance to the next scene,\n(B) to block, (F) to flee. ");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Food " + Program.currentPlayer.food + " Health: " + Program.currentPlayer.health);
                 string input = Console.ReadLine();
                 if (input.ToLower() == "i" || input.ToLower() == "investigate")
@@ -118,11 +125,17 @@ namespace Ignorace_is_Bliss
                     Console.ReadKey();
                     //eat to regain health, it'll be fine monsters are polite enough to wait for the next turn
                 }
-                else if (input.ToLower() == "s" || input.ToLower() == "skip")
+                else if (input.ToLower() == "a" || input.ToLower() == "advance")
                 {
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine($"You ask your mom if your almost there.");
-                    Console.WriteLine($"She smiles fondly at you. 'Just about there sweetie I just need to stop at the grocer to get some gas.'");
+                    Console.WriteLine($"She smiles fondly at you.");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine($"'Just about there sweetie, we just need to grab some gas!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Program.Scene1();
+                    
 
                 }
                 else if (input.ToLower() == "f" || input.ToLower() == "flee")
@@ -136,9 +149,9 @@ namespace Ignorace_is_Bliss
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine($"As you reach for the car's door handle you find that it doesn't pry open.");
                         Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.WriteLine("$Your mom looks at you bewildered.");
+                        Console.WriteLine($"Your mom looks at you bewildered.");
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine($"Hey! What on Earth do you think your doing?!?! Jesus, this is  why we have child locks.");
+                        Console.WriteLine($"Hey! What on Earth do you think your doing?!?! Put your hand down!.");
                         Console.ForegroundColor = ConsoleColor.Red;
                         int damageV = 2;
 
@@ -171,11 +184,19 @@ namespace Ignorace_is_Bliss
                 {
                     //death code
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"The light leaves your eyes. As "+n+ "stands above you grief striken on her face.\n You have died in the most foolish of ways.");
+                    Console.WriteLine($"\n \nThe light leaves your eyes. As "+n+ " stands above you grief striken on her face.\n \nYou have died in the most foolish of ways.");
+                    Console.Clear();
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                   
+                    Console.WriteLine($"!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!\nGAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!!GAME=OVER!");
+
                     Console.ReadKey();
+
                     System.Environment.Exit(0);
                 }
                 Console.ReadKey();
+
             }
 
         }
