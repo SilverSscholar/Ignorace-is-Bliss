@@ -18,7 +18,7 @@ namespace Ignorace_is_Bliss
             Console.WriteLine("You stare sleepily back at your mother ...");
             Console.WriteLine("She looks at you expectantly...");
             Console.ReadKey();
-            Combat(false, "Mom", 1, 10);
+            Combat(false, "Mom", 1, 100);
         }
 
 
@@ -45,22 +45,22 @@ namespace Ignorace_is_Bliss
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine(n);
                 Console.WriteLine(p+ "/" + h);
-                Console.WriteLine("======================");
-                Console.WriteLine("| (I)nvestigate  (C)ry |");
-                Console.WriteLine("|  (R)eason  (B)lock   |");
-                Console.WriteLine("| (E)at        (F)lee  |");
-                Console.WriteLine("======================");
+                Console.WriteLine("================================");
+                Console.WriteLine("| (I)nvestigate  (C)ry (S)kip  |");
+                Console.WriteLine("|  (R)eason  (B)lock           |");
+                Console.WriteLine("| (E)at        (F)lee          |");
+                Console.WriteLine("================================");
                 Console.WriteLine("Food " + Program.currentPlayer.food + " Health: " + Program.currentPlayer.health);
                 string input = Console.ReadLine();
-                if (input.ToLower()== "i" || input.ToLower()== "investigate")
+                if (input.ToLower() == "i" || input.ToLower() == "investigate")
                 {
                     //investigate the encounter
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"Your " +n+ " looks at you, expectantly.");
+                    Console.WriteLine($"Your " + n + " looks at you, expectantly.");
                     Console.WriteLine($"It's been hours since she picked you up from your father's and the road is still endless. \n");
                     Console.WriteLine($"She looks exhausted herself.");
                 }
-                else if (input.ToLower() == "c" || input.ToLower()== "cry")
+                else if (input.ToLower() == "c" || input.ToLower() == "cry")
                 {
                     //cry try to win the enemies sympathy with your tears
                     Console.ForegroundColor = ConsoleColor.White;
@@ -74,7 +74,7 @@ namespace Ignorace_is_Bliss
 
 
                 }
-                
+
                 else if (input.ToLower() == "r" || input.ToLower() == "reason")
                 {
                     Console.ForegroundColor = ConsoleColor.White;
@@ -111,12 +111,19 @@ namespace Ignorace_is_Bliss
                         Console.WriteLine($"'Oh I'm glad you found your snacks honey.'");
                         Console.ForegroundColor = ConsoleColor.Green;
                         int foodV = 5;
-                        Console.WriteLine($"You ate one mysterious snack, you recieve " +foodV+" health!");
+                        Console.WriteLine($"You ate one mysterious snack, you recieve " + foodV + " health!");
                         Program.currentPlayer.health += foodV;
                         Console.ForegroundColor = ConsoleColor.White;
                     }
                     Console.ReadKey();
                     //eat to regain health, it'll be fine monsters are polite enough to wait for the next turn
+                }
+                else if (input.ToLower() == "s" || input.ToLower() == "skip")
+                {
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"You ask your mom if your almost there.");
+                    Console.WriteLine($"She smiles fondly at you. 'Just about there sweetie I just need to stop at the grocer to get some gas.'");
+
                 }
                 else if (input.ToLower() == "f" || input.ToLower() == "flee")
                 {
@@ -133,10 +140,10 @@ namespace Ignorace_is_Bliss
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine($"Hey! What on Earth do you think your doing?!?! Jesus, this is  why we have child locks.");
                         Console.ForegroundColor = ConsoleColor.Red;
-                        int damage = (p-2) - Program.currentPlayer.health;
-                        if (damage < 0)
-                            damage = 2;
-                        Console.WriteLine("You lose " + damage + " health due to your mother's dissapointed glare.");
+                        int damageV = 2;
+
+                        Console.WriteLine("You lose " + damageV + " health due to your mother's dissapointed glare.");
+                        Program.currentPlayer.health -= damageV;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.ReadKey();
                     }
@@ -148,11 +155,13 @@ namespace Ignorace_is_Bliss
                         Console.WriteLine($"Once your hands grasp onto the handle you open the door the violent winds whipping at your hair.");
                         Console.WriteLine($"The car suddenly lurches and you find your tiny head hitting the pavement.");
                         Console.ForegroundColor = ConsoleColor.Red;
-                        int damage = (p -100) - Program.currentPlayer.health;
+                        int damageV = 100;
 
-                        Console.WriteLine($"You died instantly!");
+
+                        Console.WriteLine($"In your last moments of clarity you see the old Corolla lurch to a stop on the road. Your vision starts to fade.\nBefore you worried mother could get to you you lost " + damageV + " health!\nYou died.");
+                        Program.currentPlayer.health -= damageV;
                         Console.ForegroundColor = ConsoleColor.White;
-                        
+
                         //Die instantly retry from main screen
                         Console.ReadKey();
                     }

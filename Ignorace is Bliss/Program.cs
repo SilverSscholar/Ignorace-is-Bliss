@@ -19,6 +19,7 @@ namespace Ignorace_is_Bliss
             Console.ForegroundColor = ConsoleColor.Blue;
             Start();
             Interactions.FirstInteraction();
+            Scene1();
         }
 
 
@@ -47,5 +48,11 @@ namespace Ignorace_is_Bliss
             Console.ReadKey();
             Console.Clear();
         }
+
+        static void Scene1()
+        {
+            Console.WriteLine($"Hey " + currentPlayer.name + "how are you?");
+        }
+            
     }
 }
