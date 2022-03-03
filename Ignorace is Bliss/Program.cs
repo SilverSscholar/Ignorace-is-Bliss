@@ -100,12 +100,12 @@ namespace Ignorace_is_Bliss
 
                 Console.WriteLine("Will you give uncle Own a highfive? (Y)es/(N)o");
                string highFive = Console.ReadLine();
-                if (highFive.ToLower()== "y"||highFive.ToLower()=="Yes")
+                if (highFive.ToLower()== "y"||highFive.ToLower()=="yes")
                 {
                     Console.WriteLine("You gave Uncle Owen a highfive! He seemed absolutely delighted!");
                     Console.ReadKey();
                 }
-                else if (highFive.ToLower() =="n"||highFive.ToLower()=="No")
+                else if (highFive.ToLower() =="n"||highFive.ToLower()=="no")
                 {
                     Console.WriteLine("You refused to give Uncle Owen a highfive, he seemed sad. How dare you, you monster.");
                     Console.ReadKey();

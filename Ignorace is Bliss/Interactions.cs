@@ -127,6 +127,7 @@ namespace Ignorace_is_Bliss
                 }
                 else if (input.ToLower() == "a" || input.ToLower() == "advance")
                 {
+                    Console.Clear();
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine($"You ask your mom if your almost there.");
                     Console.WriteLine($"She smiles fondly at you.");
