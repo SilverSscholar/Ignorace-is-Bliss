@@ -58,9 +58,8 @@ namespace Ignorace_is_Bliss
             Console.WriteLine("Letting out a sigh of relief, as the steady noise of the car's right blink blips on.\nThe KREUGER sign illuminating the last step before the end of your journey.");
             Console.WriteLine("\nGas pumps litter the front of the grocer, and your mom leaves her vehicle, to pump up the gas.");
             Console.ReadKey();
-
             Console.Clear();
-
+            //set dialogue 1
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("'Hey sweet thing, sorry I swear we're almost done.\nWhy don't you come inside the KREUGER with me? We'll grab some dinner!'");
             Console.ForegroundColor = ConsoleColor.White;
@@ -68,12 +67,60 @@ namespace Ignorace_is_Bliss
             Console.WriteLine($"Your mother reached for your hand, and you took it in stride.\nIt was too late to argue against how big you were, and you were too tired to really say anything.");
             Console.ReadKey();
             Console.Clear();
-
-            Console.WriteLine($"As you walked in your footie pajamas into the large KREUGER you noticed the central window lights flickering on, and off.\n Being the asute" +
+            //set dialogue 2
+            Console.WriteLine($"As you walked your footie pajams squelched in the rain water.\n You walked uncomfortably into the large KREUGER you noticed the central window lights flickering on, and off.\n Being the asute" +
                 $"child that you were you very worriedly pointed it out.\nYour mother gave you a very gentle smile, and assured you that it was nighttime and the building was tired.");
             Console.WriteLine("That seemed to satisfy you for the time being.");
             Console.ReadKey();
             Console.Clear();
+            //set dialogue 3
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(".Hey! Nicole is that you!?'");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"\nYou didn't know who this 'Nicole' was, but your mom looked up and smiled at the man running the register.");
+            Console.WriteLine($"He was a fairly imposing figure, an older man with gray whiskers on his face, and a very wrinkly forehead.\nYou didn't recongnize him.");
+            Console.ReadKey();
+            Console.Clear();
+
+            if (currentPlayer.name == "")
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Well I'll be, is this the same kiddo you had with-");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\n'Shhhhh we don't talk about him.");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\nYou asked your mom who you don't talk about.\nShe smiled and gently ruffled your hair telling you not to worry about it.");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Well I'll be damned! Is that litte "+currentPlayer.name+"! Oh lawdy you've gotten so big!\nCan you give Owen a highfive?");
+
+                Console.WriteLine("Will you give uncle Own a highfive? (Y)es/(N)o");
+               string highFive = Console.ReadLine();
+                if (highFive.ToLower()== "y"||highFive.ToLower()=="Yes")
+                {
+                    Console.WriteLine("You gave Uncle Owen a highfive! He seemed absolutely delighted!");
+                    Console.ReadKey();
+                }
+                else if (highFive.ToLower() =="n"||highFive.ToLower()=="No")
+                {
+                    Console.WriteLine("You refused to give Uncle Owen a highfive, he seemed sad. How dare you, you monster.");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("You stared at Uncle Owen with a blank face.\nYour mother assures him that honestly you're just wore out.\nHe seemed understanding.");
+                    Console.ReadKey();
+                }
+                
+            }
+            Console.ReadKey();
+            Console.Clear();
+
+
         }
             
     }
