@@ -157,7 +157,7 @@ namespace Ignorace_is_Bliss
 
         public static void RecieveGroceryList()
         {
-            Console.ForegroundColor = ConsoleColor.Blue
+            Console.ForegroundColor = ConsoleColor.Blue;
             string filePath = @"C:\Users\Trinity\Desktop\GroceryList.txt";
 
             //string[] lines = File.ReadAllLines(filePath);
