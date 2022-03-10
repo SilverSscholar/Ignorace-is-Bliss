@@ -126,8 +126,6 @@ namespace Ignorace_is_Bliss
             Scene2();
         }
         public static void Scene2()
-
-
         {
             Console.ForegroundColor = ConsoleColor.White;
 
