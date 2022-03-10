@@ -10,10 +10,12 @@ namespace Ignorace_is_Bliss
     {
         static Random rand = new Random();
         //Interaction Generic
-
-
+        
+        
         //Interactions
         public static void FirstInteraction() //function won't return variable if void
+
+        
         {            
             Console.ForegroundColor = ConsoleColor.White;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,10 @@ namespace Ignorace_is_Bliss
     class Program
     {
         public static Player currentPlayer = new Player();
-        
-       
+
+
         static void Main(string[] args)
-     
+
         {
             //Set the Background Color and Foreground Color
             Console.BackgroundColor = ConsoleColor.Black;
@@ -20,20 +21,23 @@ namespace Ignorace_is_Bliss
             Start();
             Interactions.FirstInteraction();
             Scene1();
+            Scene2();
+            RecieveGroceryList();
+            
         }
 
 
 
         static void Start() //happens seperate from the main string arguments; game start
         {
-          
+
             Console.WriteLine($"Ignorance is Bliss");
             Console.WriteLine("Please insert a name:");
             Console.ForegroundColor = ConsoleColor.White;
             currentPlayer.name = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
-            Console.WriteLine($"You wake to the sound of rain pitter pattering on the side of the car's window." );
+            Console.WriteLine($"You wake to the sound of rain pitter pattering on the side of the car's window.");
             Console.WriteLine($"Interstate lights flashing along the back of the car along your face, as your strapped in tightly in your carseat.");
             Console.WriteLine($"It still remains wholly dark outside. \n");
             Console.WriteLine($"Your mother notices you sleepily moving your head, making eye contact with you in the front mirror. \n");
@@ -96,16 +100,16 @@ namespace Ignorace_is_Bliss
             else
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Well I'll be damned! Is that litte "+currentPlayer.name+"! Oh lawdy you've gotten so big!\nCan you give Owen a highfive?");
+                Console.WriteLine("Well I'll be damned! Is that litte " + currentPlayer.name + "! Oh lawdy you've gotten so big!\nCan you give Owen a highfive?");
 
                 Console.WriteLine("Will you give uncle Own a highfive? (Y)es/(N)o");
-               string highFive = Console.ReadLine();
-                if (highFive.ToLower()== "y"||highFive.ToLower()=="yes")
+                string highFive = Console.ReadLine();
+                if (highFive.ToLower() == "y" || highFive.ToLower() == "yes")
                 {
                     Console.WriteLine("You gave Uncle Owen a highfive! He seemed absolutely delighted!");
                     Console.ReadKey();
                 }
-                else if (highFive.ToLower() =="n"||highFive.ToLower()=="no")
+                else if (highFive.ToLower() == "n" || highFive.ToLower() == "no")
                 {
                     Console.WriteLine("You refused to give Uncle Owen a highfive, he seemed sad. How dare you, you monster.");
                     Console.ReadKey();
@@ -115,13 +119,52 @@ namespace Ignorace_is_Bliss
                     Console.WriteLine("You stared at Uncle Owen with a blank face.\nYour mother assures him that honestly you're just wore out.\nHe seemed understanding.");
                     Console.ReadKey();
                 }
-                
+
             }
             Console.ReadKey();
             Console.Clear();
+        }
+        public static void Scene2()
 
+
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.WriteLine("Owen looked at you both with intrigue.");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("'So what are y'all planning on getting tonight?'");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("'Oh just some food before we head home.");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("'Oh! Well it's been a while since we caught up!\n Why don't you let the little kiddo get the groceries for you!'");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("'I.. dunno about that they're still a little young...'");
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("'They'll be fine won't you" + currentPlayer.name + "!'");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Before you had a chance to nod yes or no, uncle Owen was already starting to write down a list for you.");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("'This is the number of every aisle, and what's in each aisle kid. I know you got a smart head, you can read. Just look at this.'");
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        public static void RecieveGroceryList()
+        {
+            string filePath = @"C:\Users\Trinity\Desktop\School Work\One Off Assignments\Ignorace is Bliss\GroceryList.txt";
+
+            //string[] lines = File.ReadAllLines(filePath);
+            List<string> lines = new List<string>();
+            lines = File.ReadAllLines(filePath).ToList();
+            foreach (String line in lines)
+            {
+                Console.WriteLine(line);
+            }
+            Console.ReadLine();
 
         }
-            
+
     }
 }
+

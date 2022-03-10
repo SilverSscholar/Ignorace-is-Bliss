@@ -11,7 +11,7 @@ namespace Ignorace_is_Bliss
         public string name;
         public int food = 5;
         public int health = 10;
-        public int damage =1;
+        public int damage =20;
         
     }
 }
