@@ -117,12 +117,13 @@ namespace Ignorace_is_Bliss
                 else
                 {
                     Console.WriteLine("You stared at Uncle Owen with a blank face.\nYour mother assures him that honestly you're just wore out.\nHe seemed understanding.");
-                    Console.ReadKey();
+                   
                 }
-
+                   
             }
             Console.ReadKey();
             Console.Clear();
+            Scene2();
         }
         public static void Scene2()
 
@@ -133,38 +134,44 @@ namespace Ignorace_is_Bliss
             Console.WriteLine("Owen looked at you both with intrigue.");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("'So what are y'all planning on getting tonight?'");
+            Console.ReadKey();
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("'Oh just some food before we head home.");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("'Oh! Well it's been a while since we caught up!\n Why don't you let the little kiddo get the groceries for you!'");
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("'I.. dunno about that they're still a little young...'");
+            Console.ReadKey();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("'They'll be fine won't you" + currentPlayer.name + "!'");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Before you had a chance to nod yes or no, uncle Owen was already starting to write down a list for you.");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("'This is the number of every aisle, and what's in each aisle kid. I know you got a smart head, you can read. Just look at this.'");
+            Console.WriteLine("'This is the number of every aisle, and what's in each aisle kid.\nI know you got a smart head, you can read. Just look at this.'");
             Console.ReadKey();
             Console.Clear();
+            RecieveGroceryList();
         }
 
         public static void RecieveGroceryList()
         {
-            string filePath = @"C:\Users\Trinity\Desktop\School Work\One Off Assignments\Ignorace is Bliss\GroceryList.txt";
+            Console.ForegroundColor = ConsoleColor.Blue
+            string filePath = @"C:\Users\Trinity\Desktop\GroceryList.txt";
 
             //string[] lines = File.ReadAllLines(filePath);
-            List<string> lines = new List<string>();
-            lines = File.ReadAllLines(filePath).ToList();
-            foreach (String line in lines)
-            {
-                Console.WriteLine(line);
-            }
-            Console.ReadLine();
-
+             List<string> lines = new List<string>();
+             lines = File.ReadAllLines(filePath).ToList();
+             foreach (String line in lines)
+             {
+                 Console.WriteLine(line);
+             }
+             Console.ReadLine();
+            Console.ReadKey();
+            Console.Clear();
         }
-
+           
     }
 }
 
